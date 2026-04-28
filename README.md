@@ -1,80 +1,182 @@
-# Amazon Device Parallel Tests
+# 🚀 Amazon Device Parallel Tests (Playwright)
 
-This project uses Playwright with JavaScript to automate these scenarios:
+This project demonstrates automated end-to-end testing of Amazon using **Playwright (JavaScript)** with **parallel execution**.
 
-- Search Amazon.com for an iPhone, add an available result to the cart, and print the device price.
-- Search Amazon.com for a Galaxy device, add an available result to the cart, and print the device price.
-- Run both scenarios in parallel.
+It covers searching for devices, adding them to the cart, extracting prices, and running tests simultaneously.
 
-## Prerequisites
+---
 
-- Node.js 18 or newer
-- npm
+## 📌 Features
 
-## Install
+* 🔍 Search for products (iPhone & Galaxy devices)
+* 🛒 Add available products to cart
+* 💰 Extract and print device price
+* ⚡ Run tests in parallel using Playwright workers
+* ☁️ Execute tests on LambdaTest Cloud
+* 🧪 Robust handling for dynamic UI elements
+
+---
+
+## 🧪 Test Scenarios
+
+1. Search for **iPhone** → Add first available product → Print price
+2. Search for **Galaxy device** → Add first available product → Print price
+3. Execute both scenarios **in parallel**
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── tests/
+│   └── amazon.spec.js
+├── playwright.config.js
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Prerequisites
+
+Make sure you have:
+
+* Node.js (v18 or higher)
+* npm (comes with Node.js)
+
+---
+
+## 📦 Clone the Repository
+
+```bash
+git clone https://github.com/UttamYadav-DGI/-TestMu-AI-Assignment.git
+cd -TestMu-AI-Assignment
+```
+
+---
+
+## 📥 Install Dependencies
 
 ```bash
 npm install
 npx playwright install chromium
 ```
 
-## Run Locally
+---
+
+## ▶️ Run Tests
+
+### 🔹 Run in Parallel (Default)
 
 ```bash
 npm test
 ```
 
-The Playwright config enables parallel execution with:
+### 🔹 Run in Headed Mode
+
+```bash
+npm run test:headed
+```
+
+### 🔹 Debug Mode
+
+```bash
+npm run test:debug
+```
+
+---
+
+## ⚙️ Playwright Configuration
+
+Parallel execution is enabled in `playwright.config.js`:
 
 ```js
 fullyParallel: true,
 workers: 2
 ```
 
-Device prices are printed to the console during the test run.
+---
 
-For headed mode:
+## ☁️ Run on LambdaTest Cloud
 
-```bash
-npm run test:headed
-```
+### 1️⃣ Create an Account
 
-For debugging:
+Sign up on LambdaTest and get your credentials.
 
-```bash
-npm run test:debug
-```
+---
 
-## LambdaTest Cloud
-
-1. Create a LambdaTest account.
-2. Get your `LT_USERNAME` and `LT_ACCESS_KEY` from the LambdaTest dashboard.
-3. Export the credentials:
+### 2️⃣ Set Environment Variables
 
 ```bash
 export LT_USERNAME="your_lambdatest_username"
 export LT_ACCESS_KEY="your_lambdatest_access_key"
 ```
 
-4. Run the cloud config:
+---
+
+### 3️⃣ Run Tests on Cloud
 
 ```bash
 npm run test:lambdatest
 ```
 
-## Notes
+---
 
-Amazon may show CAPTCHA, regional prompts, unavailable listings, warranty popups, or anti-bot checks. The tests include common fallbacks, but any CAPTCHA must be resolved outside the automated test flow.
+## 📊 Output
 
-## GitHub Submission
+* Device prices are printed in the console
+* Test results are displayed in Playwright report
 
-Create a public GitHub repository and push this project:
+To view report:
 
 ```bash
-git init
-git add .
-git commit -m "Add parallel Amazon Playwright tests"
-git branch -M main
-git remote add origin https://github.com/UttamYadav-DGI/-TestMu-AI-Assignment.git
-git push -u origin main
+npx playwright show-report
 ```
+
+---
+
+## ⚠️ Notes
+
+Amazon may show:
+
+* CAPTCHA challenges
+* Regional popups
+* Product unavailability
+* Anti-bot checks
+
+👉 These may interrupt automation and require manual intervention.
+
+---
+
+## 🛠️ Improvements (Future Scope)
+
+* Add retry logic for flaky tests
+* Implement better selectors for stability
+* Add GitHub Actions (CI/CD pipeline)
+* Record videos/screenshots for test runs
+* Cross-browser testing (Firefox, WebKit)
+
+---
+
+## 👨‍💻 Author
+
+**Uttam Yadav**
+💡 Full-Stack Developer | Automation Enthusiast
+
+---
+
+## ⭐ Contribution
+
+If you'd like to improve this project:
+
+1. Fork the repo
+2. Create a new branch
+3. Make changes
+4. Submit a pull request
+
+---
+
+## 📜 License
+
+This project is for educational and assignment purposes.
