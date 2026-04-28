@@ -1,0 +1,23 @@
+{
+  "name": "amazon-device-tests",
+  "version": "1.0.0",
+  "description": "Parallel Playwright tests for searching and adding iPhone and Galaxy devices on Amazon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:lambdatest": "LT_USERNAME=$LT_USERNAME LT_ACCESS_KEY=$LT_ACCESS_KEY playwright test --config=playwright.lambdatest.config.js"
+  },
+  "keywords": [
+    "playwright",
+    "amazon",
+    "automation",
+    "lambdatest"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
